@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>form_list_g</title>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+  <style >
+    .container-small{
+      max-width: 500px;
+      background-color: rgba(192,208,206,1);
+    }
+    body{
+      background-color: rgba(247,186,175,.53);
+    }
+  </style>
+</head>
+<body>
+  <form action="" class="container container-small">
+    <h1 class="col-sm-6 col-sm-offset-4">注册</h1>
+    <div class="form-inline form-group">
+      <div class="form-group has-error">
+        <label class="control-label">姓</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="form-group has-success">
+        <label class="control-label">名</label>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label">金额</label>
+      <div class="input-group">
+        <div class="input-group-addon">$</div>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>想去：</label>
+      <select class="form-control">
+        <option value="1">上海</option>
+        <option value="2">武汉</option>
+        <option value="3">深圳</option>
+      </select>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <input class="form-control" placeholder="XXXXX">
+      </div>
+      <div class="col-sm-4">
+        <input class="form-control" placeholder="XXXXX">
+      </div>
+      <div class="col-sm-4">
+        <input class="form-control" placeholder="XXXXX">
+      </div>
+    </div>
+    <div class="well">
+      <p>按钮</p>
+      <button class="btn btn-defualt">点我</button>
+      <button class="btn btn-primary">点我</button>
+      <button class="btn btn-success">点我</button>
+      <button class="btn btn-warning">点我</button>
+      <button class="btn btn-info">点我</button>
+      <button class="btn btn-danger">点我</button>
+      <p></p><br>
+      <a href="https://www.google.com" class="btn btn-danger" target="_blank">测试google网站</a>
+      <button class="btn btn-info btn-block">点我</button>
+    </div>
+  </form>
+</body>
+
+</html>
