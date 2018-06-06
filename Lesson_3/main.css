@@ -1,0 +1,7 @@
+body{
+  max-width: 500px;
+  margin: 0 auto;
+}
+.table-hover{
+  /* column-rule-color: rgba(181,176,131,1) */
+}
