@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <style type="text/css">
+  #show{position:relative;width:400px;height:40px}
+  .imgLevel{
+    border:1px solid #999;
+    cursor:pointer;
+    background:#fff;
+    width:80px;height:100px;
+    filter:Shadow(Color="#ff0000",Direction="135");
+    overflow:hidden;
+  }
+  .imgHover{border:1px solid #f00}
+  </style>
+</head>
+<body>
+<div id="show"></div>
+<br> <br> <br> <br> <br> <br>
+<input type="button" value="<==" id="sl" />
+<input type="button" value="==>" id="sr">
+  <script type="text/javascript">
+  <!--
+   function solidImage(obj,imgArr){
+    if(!obj||!imgArr)return;
+    var sc=0;
+    var lCounter=0,rCounter=0;
+    var l=0,temp,imgWidth=[];
+    //图片模板
+    var imgTpl=function(src){
+      var img=document.createElement("img");
+      img.src=src;
+      img.className="imgLevel";
+      var width=100;  //放大后的宽度
+      var t=img.height/img.width;  //实际高宽比例
+      var oSize,zindex;
+      img.onmouseover=function(){
+        if(!oSize)oSize=[this.width,this.height];
+        zindex=this.style.zIndex;
+        this.style.width=width;
+        this.style.height=width*t;
+        this.style.zIndex=10000;
+      }
+      img.onmouseout=function(){
+        this.style.width=oSize[0];
+        this.style.height=oSize[1];
+        this.style.zIndex=zindex;
+      }
+      return img;
+    };
+    var PI=Math.PI;
+    var $=function(el){return typeof el=="object"?el:document.getElementById(el)};
+    obj=$(obj);
+    var objPos=[obj.offsetLeft+obj.offsetWidth/2,obj.offsetTop+obj.offsetHeight/2];
+    var r=[obj.offsetWidth/2,obj.offsetHeight/2];
+    if(imgArr instanceof Array){
+      l=imgArr.length;
+      temp=360/l;
+      for(var i=0;i<l;i++){
+        imgArr[i]=obj.appendChild(imgTpl(imgArr[i]));
+      }
+      for(var i=0;i<l;i++){
+        var cs=Math.cos(temp*i*PI/180);
+        var ss=Math.sin(temp*i*PI/180);
+        imgArr[i].style.cssText="position:absolute;left:"+(r[0]*(cs+1))+"px;top:"+(r[1]*(ss+1))+"px;width:"+(((ss+1)/2+1)*0.5)*90+"px;height:"+(((ss+1)/2+1)*0.5)*120+"px;z-index:"+parseInt((ss+1)/2*l);
+      }
+    }
+    //绑定左滚动与右滚动按钮
+    this.bindButton=function(l,r){
+      var ltm,rtm;
+      var self=this;
+      $(l).onmousedown=function(){ltm=setInterval(self.scrollLeft,10)}
+      $(l).onmouseup=$(l).onmouseout=function(){clearInterval(ltm);lCounter=0}
+      $(r).onmousedown=function(){rtm=setInterval(self.scrollRight,10)}
+      $(r).onmouseup=$(r).onmouseout=function(){clearInterval(rtm);rCounter=0}
+    }
+    //滚动接口
+    var __scroll=function(direction){
+      if(direction=="left"){
+        if(lCounter<2)lCounter+=0.1;  //速度渐快
+        sc+=lCounter;
+      }else{
+        if(rCounter<2)rCounter+=0.1;  //速度渐快
+        sc-=rCounter;
+      }
+      for(var i=0;i<l;i++){
+        var cs=Math.cos((temp*i+sc)*PI/180);
+        var ss=Math.sin((temp*i+sc)*PI/180);
+        var v=(ss+1)/2;
+        imgArr[i].style.cssText="position:absolute;left:"+(r[0]*(cs+1))+"px;top:"+(r[1]*(ss+1))+"px;width:"+((v+1)*0.5)*90+"px;height:"+((v+1)*0.5)*120+"px;z-index:"+parseInt(v*l);
+      }
+    }
+    //顺时针滚动(向左)
+    this.scrollLeft=function(){__scroll("left")}
+    //逆时针滚动(向右)
+    this.scrollRight=function(){__scroll("right")}
+   }
+
+   var imgArrs=[
+    "http://images.china-pub.com/ebook300001-305000/301277/cover.jpg",
+    "http://images.china-pub.com/ebook300001-305000/301277/cover.jpg",
+    "http://images.china-pub.com/ebook300001-305000/301277/cover.jpg",
+    "http://images.china-pub.com/ebook300001-305000/301277/cover.jpg",
+    "http://images.china-pub.com/ebook300001-305000/301277/cover.jpg",
+    "http://images.china-pub.com/ebook300001-305000/301277/cover.jpg",
+    "http://images.china-pub.com/ebook300001-305000/301277/cover.jpg",
+    "http://images.china-pub.com/ebook300001-305000/301277/cover.jpg"]
+   var s=new solidImage("show",imgArrs);
+   s.bindButton("sl","sr");
+  //-->
+  </script>
+</body>
+</html>

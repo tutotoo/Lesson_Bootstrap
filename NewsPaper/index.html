@@ -14,8 +14,11 @@
        <div class="navbar-header">
           <a href="index.html" class="navbar-brand"></a>
        </div>
+       <label id="toggle-label" class="visible-xs-inline-block" for="toggle-checkbox">MENU</label>
+       <input class="hidden" id="toggle-checkbox" type="checkbox" >
+       <div class="hidden-xs">
          <ul class="nav navbar-nav">
-           <li><a href="#">开始</a></li>
+           <li class="active"><a href="#">开始</a></li>
            <li><a href="#">快读</a></li>
            <li><a href="#">世界</a></li>
            <li><a href="#">TECH</a></li>
@@ -25,12 +28,13 @@
            <li><a href="page/login.html">思记</a></li>
            <li><a href="page/signup.html">加入</a></li>
          </ul>
+       </div>
      </div>
    </div>
    <div class="row">
      <div class="container">
        <div class="col-sm-2">
-         <div class="list-group side-bar">
+         <div class="hidden-xs list-group side-bar">
            <a href="#" class="list-group-item active">全部都是你</a>
            <a href="#" class="list-group-item">一天天</a>
            <a href="#" class="list-group-item">日日夜夜</a>
@@ -47,7 +51,7 @@
                 <img src="https://dummyimage.com/600x400/c9c95f/fff.png&text=where+you+love+me?" alt="me">
               </div>
               <div class="col-xs-7">
-                <a href="#" class="title">
+                <a href="page/news.html" class="title">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 </a>
                 <div class="info">
@@ -182,7 +186,7 @@
        </div>
        <div class="col-sm-3">
          <div class="search-bar">
-           <input type="search" class="form-control">
+           <input type="search" class="form-control" placeholder="搜索">
          </div>
          <div class="side-bar-card flag clearfix">
            <div class="col-xs-5">

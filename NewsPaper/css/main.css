@@ -151,3 +151,22 @@ img,
 .container-small{
   max-width: 500px;
 }
+
+#toggle-checkbox:checked ~ div{
+  display: block !important;
+}
+
+#toggle-label{
+  display: inline-block;
+  position: absolute;
+  right: 6px;
+  top: 15px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #666666;
+  display: none;
+}
+
+#toggle-label:hover{
+  color: #aaaaaa;
+}
